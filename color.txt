@@ -1,0 +1,3 @@
+primaryColor: #efefef
+secondaryColor: #3498DB
+accentColor: #FF6B6B;
