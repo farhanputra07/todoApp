@@ -1,6 +1,20 @@
 import React from 'react';
+import classes from './TodoItem.module.css';
+import ListofTodoItem from './ListofTodoItem';
 const TodoItem = (props) => {
-  return;
+  const checkBoxProps = {
+    type: 'checkbox',
+    id: props.itemList.id,
+  };
+  return (
+    <ul className={classes['item-container']}>
+      {props.itemList.map((item) => (
+        <li key={item.id}>
+          <ListofTodoItem property={checkBoxProps} text={item.text} />
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 export default TodoItem;

@@ -6,7 +6,6 @@ function App() {
       <Header />
       <main>
         <MainContent />
-        <h2>lamo</h2>
       </main>
     </div>
   );
