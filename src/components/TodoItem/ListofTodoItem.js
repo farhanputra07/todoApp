@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import classes from './ListOfTodoItem.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -6,7 +6,12 @@ import {
   faPersonMilitaryToPerson,
 } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 const ListofTodoItem = (props) => {
+  const [isTextClick, setTextClick] = useState(false);
+  const textClickHandler = () => {
+    setTextClick((prev) => !prev);
+  };
   const editTodoHandler = (props) => {
     return;
   };
@@ -15,7 +20,12 @@ const ListofTodoItem = (props) => {
   };
   return (
     <Fragment>
-      <p>Go Shopping</p>
+      <p
+        onClick={textClickHandler}
+        className={`${isTextClick ? classes.textClick : ''}`}
+      >
+        {props.text}
+      </p>
       <div className={classes.listWrapper}>
         <FontAwesomeIcon icon={faPenToSquare} onClick={editTodoHandler} />
         <FontAwesomeIcon icon={faTrash} onClick={deleteTodoHandler} />
