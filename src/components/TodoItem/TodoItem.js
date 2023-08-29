@@ -4,7 +4,6 @@ import ListofTodoItem from './ListofTodoItem';
 const TodoItem = (props) => {
   const checkBoxProps = {
     type: 'checkbox',
-    id: props.itemList.id,
   };
   return (
     <ul className={classes['item-container']}>

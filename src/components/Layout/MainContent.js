@@ -18,6 +18,7 @@ const MainContent = () => {
     }
     isShowTodo(false);
   }, [DUMMY_TODO]);
+
   const inputValue = {
     type: 'text',
     maxLength: 50,
