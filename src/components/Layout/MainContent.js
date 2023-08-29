@@ -5,8 +5,7 @@ import classes from './MainContent.module.css';
 import TodoItem from '../TodoItem/TodoItem';
 
 const DUMMY_TODO = [
-  { id: 'td1', text: 'Morning run 500m' },
-  { id: 'td2', text: 'Complete section 21 react course' },
+  { id: 'td1', task: 'Go shopping', isCompleted: false, isEditing: false },
 ];
 
 const MainContent = () => {
