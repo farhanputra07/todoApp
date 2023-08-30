@@ -12,11 +12,11 @@ const ListofTodoItem = (props) => {
   const textClickHandler = () => {
     setTextClick((prev) => !prev);
   };
-  const editTodoHandler = (props) => {
-    return;
+  const editTodoHandler = () => {
+    props.editState(props.itemId);
   };
-  const deleteTodoHandler = (props) => {
-    return;
+  const deleteTodoHandler = () => {
+    props.deleteTodo(props.itemId);
   };
   return (
     <Fragment>
@@ -27,8 +27,16 @@ const ListofTodoItem = (props) => {
         {props.text}
       </p>
       <div className={classes.listWrapper}>
-        <FontAwesomeIcon icon={faPenToSquare} onClick={editTodoHandler} />
-        <FontAwesomeIcon icon={faTrash} onClick={deleteTodoHandler} />
+        <FontAwesomeIcon
+          icon={faPenToSquare}
+          onClick={editTodoHandler}
+          className={classes.edit}
+        />
+        <FontAwesomeIcon
+          icon={faTrash}
+          onClick={deleteTodoHandler}
+          className={classes.trash}
+        />
       </div>
     </Fragment>
   );

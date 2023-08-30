@@ -19,7 +19,7 @@
 }
 
 .form input:focus {
-  outline: none;
+  outline-color: #ff6b6b;
 }
 
 .form button {

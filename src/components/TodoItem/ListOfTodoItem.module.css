@@ -14,3 +14,18 @@ p:hover {
 .textClick {
   text-decoration: 2px line-through white;
 }
+
+.edit,
+.trash {
+  cursor: pointer;
+}
+
+.trash {
+  margin-left: 10px;
+}
+
+.trash:hover,
+.edit:hover {
+  width: 20px;
+  height: 20px;
+}
