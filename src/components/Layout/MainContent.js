@@ -4,19 +4,27 @@ import UserInput from '../UserInput/UserInput';
 import classes from './MainContent.module.css';
 import TodoItem from '../TodoItem/TodoItem';
 
-const DUMMY_TODO = [
-  { id: 'td1', task: 'Go shopping', isCompleted: false, isEditing: false },
-];
-
 const MainContent = () => {
   const [showTodo, isShowTodo] = useState(false);
+  const [todos, setTodos] = useState([]);
+  const addTodoHandler = (todoTask) => {
+    setTodos([
+      ...todos,
+      {
+        id: Math.random() * 100,
+        task: todoTask,
+        isCompleted: false,
+        isEditing: false,
+      },
+    ]);
+  };
   useEffect(() => {
-    if (DUMMY_TODO.length > 0) {
+    if (todos.length > 0) {
       isShowTodo(true);
       return;
     }
     isShowTodo(false);
-  }, [DUMMY_TODO]);
+  }, [todos]);
 
   const inputValue = {
     type: 'text',
@@ -27,9 +35,9 @@ const MainContent = () => {
   return (
     <div className={classes.mainContent}>
       <Card>
-        <UserInput value={inputValue} />
+        <UserInput value={inputValue} addTodo={addTodoHandler} />
         {!showTodo && <p className={classes.text}>Start making your todo!</p>}
-        {showTodo && <TodoItem itemList={DUMMY_TODO} />}
+        {showTodo && <TodoItem itemList={todos} />}
       </Card>
     </div>
   );

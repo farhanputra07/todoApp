@@ -5,8 +5,8 @@ import ListofTodoItem from './ListofTodoItem';
 const TodoItem = (props) => {
   return (
     <ul className={classes['item-container']}>
-      {props.itemList.map((item) => (
-        <li key={item.id}>
+      {props.itemList.map((item, index) => (
+        <li key={index}>
           <ListofTodoItem text={item.task} />
         </li>
       ))}
